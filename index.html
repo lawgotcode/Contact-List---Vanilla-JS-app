@@ -11,5 +11,114 @@
 <body>
  <div class="container">
   <h1 class="center-align">My contacts</h1>
+  <input type="text" id="filterInput" placeholder="Search names...">
+  <ul id="names" class="collection.with-header">
+  <li class="collection-header">
+  <h5>A</h5>
+  </li>
+  <li class="collection-item">
+  <a href="#">Agyei</a>
+  </li>
+   <li class="collection-item">
+  <a href="#">Atta</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Annabel</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Agyeman</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Adjei</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Arrol</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Alan</a>
+  </li>
+  <li class="collection-header">
+  <h5>B</h5>
+  </li>
+  <li class="collection-item">
+  <a href="#">Benny</a>
+  </li>
+   <li class="collection-item">
+  <a href="#">Benson</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Baby D</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Bas</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Beanie Sigel</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Beenie Man</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Benzino</a>
+  </li>
+  <li class="collection-header">
+  <h5>C</h5>
+  </li>
+  <li class="collection-item">
+  <a href="#">Castro</a>
+  </li>
+   <li class="collection-item">
+  <a href="#">Cashis</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Caleb</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Cam'ron</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Canibus</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Capone</a>
+  </li>
+  <li class="collection-item">
+  <a href="#">Case</a>
+  </li>
+  </ul>
+  
+
+  </div>
+
+  <script>
+  // get input element
+   let filterInput = document.getElementById('filterInput');
+  // add event listener
+  filterInput.addEventListener('keyup', filterNames);
+
+  function filterNames(){
+  	// get value of input
+  	let filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+  	// get names UL
+
+  	let ul = document.getElementById('names');
+  	// get items
+    let li = ul.querySelectorAll('li.collection-item');
+
+    // loop through collection-item lis
+
+    for(let i = 0;i < li.length;i++){
+    	let a = li[i].getElementsByTagName('a')[0];
+    	// if matches
+    	if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+    		li[i].style.display = '';
+
+    	} else {
+    		li[i].style.display = 'none';
+      }
+    }
+  }
+  </script>
 </body>
 </html>
